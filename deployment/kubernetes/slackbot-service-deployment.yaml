@@ -14,9 +14,11 @@ spec:
       labels:
         app: slack-bot
     spec:
+      nodeSelector:
+        kubernetes.io/arch: arm64
       containers:
         - name: slack-bot
-          image: danswer/danswer-backend:latest
+          image: 847118582397.dkr.ecr.us-west-2.amazonaws.com/danswer/danswer-backend:v3.0
           imagePullPolicy: IfNotPresent
           command: ["python", "danswer/danswerbot/slack/listener.py"]
           ports:

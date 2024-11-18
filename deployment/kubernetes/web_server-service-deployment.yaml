@@ -25,9 +25,11 @@ spec:
       labels:
         app: web-server
     spec:
+      nodeSelector:
+        kubernetes.io/arch: arm64
       containers:
       - name: web-server
-        image: danswer/danswer-web-server:latest
+        image: 847118582397.dkr.ecr.us-west-2.amazonaws.com/danswer/danswer-web-server:v3.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000

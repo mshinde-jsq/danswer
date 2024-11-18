@@ -12,9 +12,11 @@ spec:
       labels:
         app: background
     spec:
+      nodeSelector:
+        kubernetes.io/arch: arm64
       containers:
         - name: background
-          image: danswer/danswer-backend:latest
+          image: 847118582397.dkr.ecr.us-west-2.amazonaws.com/danswer/danswer-backend:v3.0
           imagePullPolicy: IfNotPresent
           command:
             - "/bin/sh"
